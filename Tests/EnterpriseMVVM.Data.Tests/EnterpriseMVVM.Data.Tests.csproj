@@ -56,12 +56,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FunctionalTests\DatabaseScenarioTests.cs" />
+    <Compile Include="FunctionalTest.cs" />
+    <Compile Include="FunctionalTests\CustomerScenarioTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests\BusinessContextTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Code\EnterpriseMVVM.Data\EnterpriseMVVM.Data.csproj">
       <Project>{622dfe2d-a2a0-4a7e-bf8a-96ee77ef8927}</Project>
