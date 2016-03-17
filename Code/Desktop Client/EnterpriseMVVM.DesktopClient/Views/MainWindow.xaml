@@ -7,7 +7,22 @@
         d:DataContext="{d:DesignInstance viewModels:CustomerViewModel}"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <TextBox Margin="30" Text="{Binding CustomerName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
-    </Grid>
+    <DockPanel Margin="30">
+        <StackPanel DockPanel.Dock="Top">
+            <Label>First Name</Label>
+            <TextBox Text="{Binding FirstName, 
+            ValidatesOnDataErrors=True, 
+            UpdateSourceTrigger=PropertyChanged}" />
+            <Label>Last Name</Label>
+            <TextBox Text="{Binding LastName, 
+            ValidatesOnDataErrors=True, 
+            UpdateSourceTrigger=PropertyChanged}" />
+            <Label>Email</Label>
+            <TextBox Text="{Binding Email, 
+            ValidatesOnDataErrors=True, 
+            UpdateSourceTrigger=PropertyChanged}" />
+            <Button Command="{Binding AddCustomerCommand}">Add Customer</Button>
+        </StackPanel>
+        <ListBox ItemsSource="{Binding Customers}"  DockPanel.Dock="Bottom"></ListBox>
+    </DockPanel>
 </Window>

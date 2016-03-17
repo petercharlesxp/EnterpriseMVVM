@@ -16,9 +16,17 @@ namespace EnterpriseMVVM.Data.Tests.FunctionalTests
             //using (var dc = new DomainContext())
             using (var bc = new BusinessContext())
             {
-                Customer entity = bc.AddNewCustomer("David", "Anderson");
+                //Customer entity = bc.AddNewCustomer("David", "Anderson");
+                var customer = new Customer
+                {
+                    Email = "customer@northwind.com",
+                    FirstName = "David",
+                    LastName = "Anderson"
+                };
 
-                bool exists = bc.DataContext.Customers.Any(c => c.Id == entity.Id);
+                bc.AddNewCustomer(customer);
+
+                bool exists = bc.DataContext.Customers.Any(c => c.Id == customer.Id);
 
                 Assert.IsTrue(exists);
             }
